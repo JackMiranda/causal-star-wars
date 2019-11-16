@@ -1,3 +1,59 @@
 Luke has the force -> Luke is a skilled pilot
+Luke is on Tatooine -> Luke is a skilled pilot
 Luke has the force -> Luke lands the shot
 Luke is a skilled pilot -> Luke lands the shot
+Luke lands the shot -> The Death Star explodes
+Princess Leia obtains the Death Star plans -> The empire pursues princess Leia
+Princess Leia obtains the Death Star plans -> Darth Vader himself pursues princess Leia
+The empire pursues princess Leia -> Leia is captured
+Darth Vader himself pursues princess Leia -> Leia is captured
+The empire pursues princess Leia -> Leia hides the Death Star plans in R2-D2
+Darth Vader himself pursues princess Leia -> Leia hides the Death Star plans in R2-D2
+The empire pursues princess Leia -> R2-D2 and C-3PO escape the Tantive IV to Tattooine
+Darth Vader himself pursues princess Leia -> R2-D2 and C-3PO escape the Tantive IV to Tattooine
+Leia hides the Death Star plans in R2-D2 -> R2-D2 and C-3PO escape the Tantive IV to Tattooine
+R2-D2 and C-3PO escape the Tantive IV to Tattooine -> R2-D2 and C-3PO are captured by Jawas
+R2-D2 and C-3PO are captured by Jawas -> Luke, Owen, and Beru purchase the droids from the Jawas
+Luke is on Tatooine -> Luke, Owen, and Beru purchase the droids from the Jawas
+Luke, Owen, and Beru purchase the droids from the Jawas -> R2-D2 shows Luke the message from Leia
+R2-D2 shows Luke the message from Leia -> Luke encounters Obi-wan
+Obi-wan is on Tatooine -> Luke encounters Obi-wan
+Obi-wan chopped off Anakin's arms and copped his lightsaber -> Obi-wan has Anakin's old lightsaber
+Obi-wan has Anakin's old lightsaber -> Luke receives his father's lightsaber
+Luke encounters Obi-wan -> Luke receives his father's lightsaber
+Luke encounters Obi-wan -> Luke and Obi-wan decide to go to Alderaan
+R2-D2 and C-3PO escape the Tantive IV to Tattooine -> Stormtroopers kill Owen and Beru
+Stormtroopers kill Owen and Beru -> Luke and Obi-wan decide to go to Alderaan
+Luke and Obi-wan decide to go to Alderaan -> Luke and Obi-wan meet Han Solo
+Luke and Obi-wan meet Han Solo -> Han agrees to take Luke and Obi-wan to Alderaan
+Han owns Jabba money -> Han agrees to take Luke and Obi-wan to Alderaan
+Leia is captured -> Grand Moff Tarkin orders Alderaan be destroyed
+Grand Moff Tarkin orders Alderaan be destroyed -> The Death Star destroys Alderaan
+The Death Star destroys Alderaan -> Han, Chewie, Luke, and Obi-wan are captured by the Death Star's tractor beam
+Han agrees to take Luke and Obi-wan to Alderaan -> Han, Chewie, Luke, and Obi-wan are captured by the Death Star's tractor beam
+Han, Chewie, Luke, and Obi-wan are captured by the Death Star's tractor beam -> The heroes decide to rescue Leia
+Luke and Leia are force-sensitive siblings -> Luke realizes Leia is imprisoned
+Luke realizes Leia is imprisoned -> The heroes decide to rescue Leia
+The heroes decide to rescue Leia -> Obi-wan sacrifices himself
+Obi-wan sacrifices himself -> The heroes escape the Death Star to Yavin 4
+The heroes escape the Death Star to Yavin 4 -> Imperials follow the rebels to Yavin 4
+Han, Chewie, Luke, and Obi-wan are captured by the Death Star's tractor beam -> Imperials place a tracking device on the Falcon
+Imperials place a tracking device on the Falcon -> Imperials follow the rebels to Yavin 4
+Princess Leia obtains the Death Star plans -> The rebels learn of the Death Star's weakness
+The rebels learn of the Death Star's weakness -> The rebels attack the Death Star
+Imperials follow the rebels to Yavin 4 -> The Death Star attempts to destroy Yavin 4
+The Death Star attempts to destroy Yavin 4 -> The rebels attack the Death Star
+The heroes escape the Death Star to Yavin 4 -> Han is paid for Leia's rescue
+Han owns Jabba money -> Han leaves to repay Jabba
+Han is paid for Leia's rescue -> Han leaves to repay Jabba
+Han leaves to repay Jabba -> Han returns
+Han has a conscience -> Han returns
+Han returns -> Han destroys the fighters pursuing Luke
+The rebels attack the Death Star -> The rebels suffer heavy losses
+The rebels suffer heavy losses -> Luke's is the only fighter with a shot at the Death Star
+Luke's is the only fighter with a shot at the Death Star -> Luke is pursued by additional fighters
+Luke is pursued by additional fighters -> Han destroys the fighters pursuing Luke
+Han destroys the fighters pursuing Luke -> Luke survives
+Luke survives -> Luke lands the shot
+Han shoots first -> Han isn't killed by Greedo
+Han isn't killed by Greedo -> Han agrees to take Luke and Obi-wan to Alderaan

@@ -1,5 +1,6 @@
 from itertools import combinations
 import pickle
+import sys
 
 import networkx.algorithms as algs
 from networkx import DiGraph
@@ -54,6 +55,9 @@ def print_probabilities(dag):
                     f'The probability that {n} when {msg}, but NOT {", and ".join(false)} is: {lookup_prob(dag, n, set(c))}')
 
 
-dag = prompt_probabilities(parse('graph'))
+dag = parse('graph')
+if not len(sys.argv) > 1:
+    dag = prompt_probabilities(dag)
 with open('graph.pickle','wb') as f:
     pickle.dump(dag, f)
+    print('Written to graph.pickle')
