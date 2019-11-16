@@ -48,7 +48,10 @@ def print_probabilities(dag):
         pred = list(DiGraph.predecessors(dag, n))
         for i in range(len(pred)):
             for c in combinations(pred, i):
-                print(f'The probability of {n} when {", and ".join(c)} is: {lookup_prob(dag, n, set(c))}')
+                msg = ", and ".join(c) if len(c) > 0 else "no causes are true"
+                false = set(pred) - set(c)
+                print(
+                    f'The probability that {n} when {msg}, but NOT {", and ".join(false)} is: {lookup_prob(dag, n, set(c))}')
 
 
 dag = prompt_probabilities(parse('graph'))
