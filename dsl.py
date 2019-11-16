@@ -1,8 +1,9 @@
+from functools import reduce
 from itertools import combinations
-import pickle
 
 import networkx.algorithms as algs
 from networkx import DiGraph
+from networkx import all_simple_paths
 
 
 def check_line(line):
@@ -40,7 +41,10 @@ def prompt_probabilities(dag):
 
 
 def lookup_prob(dag, n, S):
-    return next(p for (s, p) in dag.nodes[n]['prob'] if S == s)
+    try:
+        return next(p for (s, p) in dag.nodes[n]['prob'] if S == s)
+    except StopIteration:
+        return 1.0
 
 
 def print_probabilities(dag):
@@ -51,9 +55,30 @@ def print_probabilities(dag):
                 msg = ", and ".join(c) if len(c) > 0 else "no causes are true"
                 false = set(pred) - set(c)
                 print(
-                    f'The probability that {n} when {msg}, but NOT {", and ".join(false)} is: {lookup_prob(dag, n, set(c))}')
+                    f'The probability that {n} when {msg},\
+                    but NOT {", and ".join(false)} is: {lookup_prob(dag, n, set(c))}')
+
+
+def probability_fixed(dag, fixed, node):
+    pred = set(DiGraph.predecessors(dag, node))
+    pred -= {fixed}
+    return lookup_prob(dag, node, pred)
+
+
+def product(i):
+    return reduce(lambda a, b: a * b, i)
+
+
+def flatten(l):
+    return [item for sublist in l for item in sublist]
+
+
+def query(dag, fixed, result):
+    nodes = set(flatten(list(all_simple_paths(dag, source=fixed, target=result))))
+    return product([probability_fixed(dag, fixed, n) for n in nodes])
 
 
 dag = prompt_probabilities(parse('graph'))
-with open('graph.pickle','wb') as f:
-    pickle.dump(dag, f)
+# with open('graph.pickle', 'wb') as f:
+# pickle.dump(dag, f)
+print(query(dag, 'Luke has the force', 'Luke lands the shot'))
