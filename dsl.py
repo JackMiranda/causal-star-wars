@@ -1,4 +1,5 @@
 from itertools import combinations
+import pickle
 
 import networkx.algorithms as algs
 from networkx import DiGraph
@@ -50,4 +51,6 @@ def print_probabilities(dag):
                 print(f'The probability of {n} when {", and ".join(c)} is: {lookup_prob(dag, n, set(c))}')
 
 
-print_probabilities(prompt_probabilities(parse('graph')))
+dag = prompt_probabilities(parse('graph'))
+with open('graph.pickle','wb') as f:
+    pickle.dump(dag, f)
