@@ -12,3 +12,4 @@ for n in dag.nodes:
 
 with open('graph.json','w') as f:
     f.write(json.dumps(json_graph.node_link_data(dag)))
+    print('Written to graph.json')

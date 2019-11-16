@@ -1,5 +1,7 @@
 from functools import reduce
 from itertools import combinations
+import pickle
+import sys
 
 import networkx.algorithms as algs
 from networkx import DiGraph
@@ -80,7 +82,10 @@ def query(dag, fixed, result):
     return product([probability_fixed(dag, fixed, n) for n in nodes])
 
 
-dag = prompt_probabilities(parse('graph'))
-# with open('graph.pickle', 'wb') as f:
-# pickle.dump(dag, f)
+dag = parse('graph')
+if not len(sys.argv) > 1:
+    dag = prompt_probabilities(dag)
+with open('graph.pickle','wb') as f:
+    pickle.dump(dag, f)
+    print('Written to graph.pickle')
 print(query(dag, 'Luke has the force', 'Luke lands the shot'))
