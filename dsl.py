@@ -23,14 +23,15 @@ def parse(filename):
 
 
 def prompt_probabilities(dag):
-    # Need to handle all False, also the all-true case is always 1.
     for n in dag.nodes:
         pred = list(DiGraph.predecessors(dag, n))
-        for i in range(1, len(pred) + 1):
+        for i in range(1, len(pred)):
             for c in combinations(pred, i):
                 prob = float(input(f'What is the probability that {n}, if {", and ".join(c)}? '))
                 dag.nodes[n]['prob'].append((set(c), prob))
-    pass
+        if not len(pred) == 0:
+            dag.nodes[n]['prob'].append((set(pred), 1))
+            prob = float(input(f'What is the probability that {n} if none of these is true: {", and ".join(pred)}? '))
 
 
 prompt_probabilities(parse('graph'))
