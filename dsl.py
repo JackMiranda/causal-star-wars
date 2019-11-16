@@ -29,7 +29,9 @@ def prompt_probabilities(dag):
         pred = list(DiGraph.predecessors(dag, n))
         for i in range(1, len(pred)):
             for c in combinations(pred, i):
-                prob = float(input(f'What is the probability that {n}, if {", and ".join(c)}? '))
+                false = set(pred) - set(c)
+                prob = float(
+                    input(f'What is the probability that {n} if {", and ".join(c)}, but NOT {", and ".join(false)}? '))
                 dag.nodes[n]['prob'].append((set(c), prob))
 
         # Special cases are a code smell
