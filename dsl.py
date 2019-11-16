@@ -29,9 +29,25 @@ def prompt_probabilities(dag):
             for c in combinations(pred, i):
                 prob = float(input(f'What is the probability that {n}, if {", and ".join(c)}? '))
                 dag.nodes[n]['prob'].append((set(c), prob))
+
+        # Special cases are a code smell
         if not len(pred) == 0:
             dag.nodes[n]['prob'].append((set(pred), 1))
             prob = float(input(f'What is the probability that {n} if none of these is true: {", and ".join(pred)}? '))
+            dag.nodes[n]['prob'].append((set([]), prob))
+    return dag
 
 
-prompt_probabilities(parse('graph'))
+def lookup_prob(dag, n, S):
+    return next(p for (s, p) in dag.nodes[n]['prob'] if S == s)
+
+
+def print_probabilities(dag):
+    for n in dag.nodes:
+        pred = list(DiGraph.predecessors(dag, n))
+        for i in range(len(pred)):
+            for c in combinations(pred, i):
+                print(f'The probability of {n} when {", and ".join(c)} is: {lookup_prob(dag, n, set(c))}')
+
+
+print_probabilities(prompt_probabilities(parse('graph')))
